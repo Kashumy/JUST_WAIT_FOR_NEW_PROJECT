@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="projekt">
+    Projekt niespodzianka 
+  </div>
+  <div id="countdown">hi</div>
+  <!-- Project -->
+  
+</body>
+</html>
+<style>
+  body {
+    font-size: 15pt;
+    background :black ;
+}
+*{
+  margin :0;
+}
+#countdown {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-align: center;
+  color:aqua ;
+  background :#0015FF29;
+  padding :20px;
+}
+#projekt {
+  color: #00ECFF;
+  display :flex ;
+  justify-content: center ;
+  padding :10px;
+  position :absolute ;
+  width: 95vw;
+  background: #7100F830;
+}
+</style>
+<script>
+  console.log('Hello World!');
+  countdown()
+  
+  function countdown() {
+    // wybierz datę
+    const targetDate = new Date("2023-5-10");
+  
+    // pobierz obecną datę
+    const now = new Date();
+  
+    // oblicz różnicę czasu w milisekundach
+    const difference = targetDate.getTime() - now.getTime();
+  
+    // przelicz różnicę czasu na dni, godziny, minuty i sekundy
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+    // wyświetl licznik czasu w elemencie div
+    var countdownElement = document.getElementById("countdown");
+    countdownElement.innerHTML = `${days} dni ${hours} godzin ${minutes} minut ${seconds} sekund`;
+  
+  }
+  setInterval(countdown, 100);
+</script>
